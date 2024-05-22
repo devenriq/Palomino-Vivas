@@ -68,7 +68,38 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
     //Juan
     @Override
     public List<Odontologo> listar() {
-     return null;
+        List<Odontologo> odontologos = new ArrayList<>();
+        Connection connection = null;
+        try {
+            connection = H2Connection.getConnection();
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(SQL_SELECT_ALL);
+            while (resultSet.next()) {
+                Integer id = resultSet.getInt(1);
+                int numMatricula = resultSet.getInt(2);
+                String nombre = resultSet.getString(3);
+                String apellido = resultSet.getString(4);
+                Odontologo odontologo = new Odontologo(id, numMatricula, nombre, apellido);
+                LOGGER.info("Odontologo listado: " + odontologo);
+                odontologos.add(odontologo);
+            }
+        } catch (SQLException e) {
+            LOGGER.error("Error al listar odontólogos: " + e.getMessage());
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            LOGGER.info(e.getMessage());
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                LOGGER.error("Error al cerrar la conexión: " + e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        return odontologos;
     }
 }
 
