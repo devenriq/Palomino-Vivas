@@ -12,7 +12,11 @@ public class Odontologo {
         this.nombre = nombre;
         Apellido = apellido;
     }
-
+    public Odontologo( int numMatricula, String nombre, String apellido) {
+        this.numMatricula = numMatricula;
+        this.nombre = nombre;
+        Apellido = apellido;
+    }
     public Integer getId() {
         return id;
     }

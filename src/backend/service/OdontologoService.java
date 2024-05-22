@@ -3,10 +3,13 @@ package backend.service;
 import backend.dao.IDao;
 import backend.model.Odontologo;
 
+import java.util.List;
+
+
 public class OdontologoService {
     private IDao<Odontologo> odontologoIDao;
 
-    private OdontologoService(IDao<Odontologo> odontologoIDao){this.odontologoIDao = odontologoIDao;}
+    public OdontologoService(IDao<Odontologo> odontologoIDao){this.odontologoIDao = odontologoIDao;}
 
     public Odontologo guardarOdontologo(Odontologo odontologo){return odontologoIDao.guardar(odontologo);}
 
