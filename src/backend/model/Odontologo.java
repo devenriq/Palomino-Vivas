@@ -1,14 +1,24 @@
 package backend.model;
 
 public class Odontologo {
+    private Integer id;
     private int numMatricula;
     private String nombre;
     private String Apellido;
 
-    public Odontologo(int numMatricula, String nombre, String apellido) {
+    public Odontologo(Integer id, int numMatricula, String nombre, String apellido) {
+        this.id = id;
         this.numMatricula = numMatricula;
         this.nombre = nombre;
         Apellido = apellido;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public int getNumMatricula() {
@@ -33,14 +43,5 @@ public class Odontologo {
 
     public void setApellido(String apellido) {
         Apellido = apellido;
-    }
-
-    @Override
-    public String toString() {
-        return "Odontologo{" +
-                "numMatricula=" + numMatricula +
-                ", nombre='" + nombre + '\'' +
-                ", Apellido='" + Apellido + '\'' +
-                '}';
     }
 }
