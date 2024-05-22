@@ -1,0 +1,2 @@
+[2024-05-21 20:58:04] [ INFO ] [OdontologoEnMemoria:20] Odontólogo guardado: Odontologo{id=1, numMatricula=12345, nombre='Juan', apellido='Vivas'}
+[2024-05-21 20:58:04] [ INFO ] [OdontologoEnMemoria:20] Odontólogo guardado: Odontologo{id=2, numMatricula=12343, nombre='Enrique', apellido='Palomino'}

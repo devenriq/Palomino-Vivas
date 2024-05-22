@@ -14,7 +14,7 @@ public class OdontologoEnMemoria implements IDao<Odontologo> {
     @Override
     public Odontologo guardar(Odontologo odontologo) {
         Integer id = odontologos.size() + 1;
-        odontologo.setId(id);
+        odontologo.setId(id);  // Establece el id del odontólogo
 
         odontologos.add(odontologo);
         LOGGER.info("Odontólogo guardado: " + odontologo);
